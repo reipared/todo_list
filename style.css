@@ -1,7 +1,9 @@
+/* Set the box-sizing property for the html element */
 html {
   box-sizing: border-box;
 }
 
+/* Inherit the box-sizing property for all elements */
 *,
 *::before,
 *::after {
@@ -10,133 +12,205 @@ html {
   padding: 0;
 }
 
+/* Style the body element */
 body {
+  /* Set the font family for the body */
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
     Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  /* Set the line height for the body */
   line-height: 1.4;
 }
 
+/* Style the container element */
 .container {
+  /* Set the width to 100% and the maximum width to 500px */
   width: 100%;
   max-width: 500px;
+  /* Center the container horizontally */
   margin: 0 auto;
+  /* Add padding to the left and right */
   padding-left: 10px;
   padding-right: 10px;
+  /* Set the color to #333 */
   color: #333;
+  /* Set the height to 90% of the viewport height */
   height: 90vh;
+  /* Add margin to the top and bottom */
   margin-top: 5vh;
   margin-bottom: 5vh;
+  /* Enable vertical scrolling */
   overflow-y: auto;
 }
 
+/* Style the app-title element */
 .app-title {
+  /* Center the text */
   text-align: center;
+  /* Add margin to the bottom */
   margin-bottom: 20px;
+  /* Set the font size to 80px */
   font-size: 80px;
+  /* Set the opacity to 0.5 */
   opacity: 0.5;
 }
 
+/* Style the svg elements */
 svg {
+  /* Set the width and height to 64px */
   width: 64px;
   height: 64px;
 }
 
+/* Style the todo-list element */
 .todo-list {
+  /* Remove the default list style */
   list-style: none;
+  /* Add margin to the bottom */
   margin-bottom: 20px;
 }
 
+/* Style the todo-item element */
 .todo-item {
+  /* Add margin to the bottom */
   margin-bottom: 10px;
+  /* Set the width to 100% */
   width: 100%;
+  /* Display the children in a row and center them vertically */
   display: flex;
   align-items: center;
+  /* Add space between the children */
   justify-content: space-between;
 }
 
+/* Style the todo-item span element */
 .todo-item span {
+  /* Allow the span element to grow */
   flex-grow: 1;
+  /* Add margin to the left and right */
   margin-left: 10px;
   margin-right: 10px;
+  /* Set the font size to 22px */
   font-size: 22px;
 }
 
+/* Style the span element inside the done class */
 .done span {
+  /* Add a line-through text decoration */
   text-decoration: line-through;
 }
 
+/* Style the checkbox input element */
 input[type="checkbox"] {
+  /* Hide the checkbox */
   display: none;
 }
 
+/* Style the tick element */
 .tick {
+  /* Set the width and height to 30px */
   width: 30px;
   height: 30px;
+  /* Add a border */
   border: 3px solid #333;
+  /* Add a border radius to make it circular */
   border-radius: 50%;
+  /* Display the children in a row and center them horizontally and vertically */
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  /* Set the cursor to a pointer */
   cursor: pointer;
 }
 
+/* Style the tick content before pseudo-element */
 .tick::before {
+  /* Add the check mark symbol */
   content: '✓';
+  /* Set the font size to 20px */
   font-size: 20px;
+  /* Hide the check mark by default */
   display: none;
 }
 
+/* Style the tick content before pseudo-element inside the done class */
 .done .tick::before {
+  /* Display the check mark */
   display: inline;
 }
 
+/* Style the delete-todo element */
 .delete-todo {
+  /* Remove the border */
   border: none;
+  /* Set the background color to transparent */
   background-color: transparent;
+  /* Remove the outline */
   outline: none;
+  /* Set the cursor to a pointer */
   cursor: pointer;
 }
 
+/* Style the delete-todo svg elements */
 .delete-todo svg {
+  /* Set the width and height to 30px */
   width: 30px;
   height: 30px;
+  /* Disable pointer events */
   pointer-events: none;
 }
 
+/* Style the form element */
 form {
+  /* Set the width to 100% */
   width: 100%;
+  /* Display the children in a row and add space between them */
   display: flex;
   justify-content: space-between;
 }
 
+/* Style the text input element */
 input[type="text"] {
+  /* Set the width to 100% */
   width: 100%;
+  /* Add padding */
   padding: 10px;
+  /* Add a border radius */
   border-radius: 4px;
+  /* Add a border */
   border: 3px solid #333;
 }
 
+/* Style the empty-state element */
 .empty-state {
+  /* Display the children in a column */
   flex-direction: column;
+  /* Center the children horizontally and vertically */
   align-items: center;
   justify-content: center;
+  /* Hide the empty-state by default */
   display: none;
 }
 
+/* Style the checklist-icon element */
 .checklist-icon {
+  /* Add margin to the bottom */
   margin-bottom: 20px;
 }
 
+/* Style the empty-state__title and empty-state__description elements */
 .empty-state__title,
 .empty-state__description {
+  /* Add margin to the bottom */
   margin-bottom: 20px;
 }
 
-.todo-list:empty{
+/* Hide the todo-list when it's empty */
+.todo-list:empty {
   display: none;
 }
 
-.todo-list:empty + .empty-state {
+/* Display the empty-state element when the todo-list is empty */
+.todo-list:empty+.empty-state {
   display: flex;
 }
